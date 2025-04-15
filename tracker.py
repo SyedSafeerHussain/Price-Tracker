@@ -8,8 +8,8 @@ import time
 driver=webdriver.Chrome()
 url="https://coinmarketcap.com/"
 driver.get(url)
-
-WebDriverWait(driver,10).until(
+time.sleep(20)
+WebDriverWait(driver,30).until(
     EC.presence_of_all_elements_located((By.CSS_SELECTOR,"table tbody tr"))
 )
 rows=driver.find_elements(By.CSS_SELECTOR,"table tbody tr")
